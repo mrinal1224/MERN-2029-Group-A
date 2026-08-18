@@ -2,10 +2,10 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json())
+
 // read a resource - http method - get
-// create a resource - http method - post
-// update a resource - http method - put , patch
-// delete a resource - http method - delete
+
 
 const courses = [
   { id: 1, courseName: "Java", instructor: "Priyansh" },
@@ -19,8 +19,35 @@ app.get("/courses", (req, res) => {
 
 app.get("/courses/:id", (req, res) => {
   let course = courses.find((course) => course.id === parseInt(req.params.id));
+  if(!course) res.status(404).send('The Course Does not exist')
+
   res.send(course);
+
+  
 });
+
+// create a resource - http method - post
+
+app.post('/courses' , (req , res)=>{
+    courses.push(req.body)
+    res.send('Course Created')
+    // We have to improve this
+})
+
+ 
+
+
+
+
+
+
+
+
+// update a resource - http method - put , patch
+// delete a resource - http method - delete
+
+
+
 
 // get a unique course
 

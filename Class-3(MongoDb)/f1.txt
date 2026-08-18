@@ -1,0 +1,6 @@
+mrinalbhattacharya_db_user
+
+PL1UDwCzyLEV9yKi
+
+
+mongodb+srv://mrinalbhattacharya_db_user:PL1UDwCzyLEV9yKi@cluster0.p7o0qqj.mongodb.net/?appName=Cluster0
